@@ -13,8 +13,8 @@
     <Grid Background="Red">
         
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="4*"/>
             <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="6*"/>
         </Grid.ColumnDefinitions>
         
         <Grid.RowDefinitions>
@@ -39,7 +39,7 @@
 
         <Slider
             Grid.Row="1"
-            Style="{StaticResource DonutSlider}"/>
+            Style="{StaticResource DonutSlider}" Margin="20.333,27.333,20,20.333" VerticalAlignment="Stretch"/>
         <Slider
             Grid.Row="2"
             Style="{StaticResource DonutSlider}"/>

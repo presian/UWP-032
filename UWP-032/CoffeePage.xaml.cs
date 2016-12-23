@@ -22,9 +22,72 @@ namespace UWP_032
     /// </summary>
     public sealed partial class CoffeePage : Page
     {
+        private bool IsCoffeeSelecetd = false;
+        private string[] SelectedItems = new string[3];
+
         public CoffeePage()
         {
             this.InitializeComponent();
+        }
+
+        private void CoffeeMenuFlyoutItem_OnClick(object sender, RoutedEventArgs e)
+        {
+            var item = sender as MenuFlyoutItem;
+            if (item != null)
+            {
+                if (item.Text != "None")
+                {
+                    this.IsCoffeeSelecetd = true;
+                    this.SelectedItems[0] = item.Text;
+                }
+                else
+                {
+                    this.IsCoffeeSelecetd = false;
+                    this.SelectedItems = new string[3];
+                    this.CoffeeResult.Text = string.Empty;
+                }
+            }
+
+            this.SetRestultText();
+        }
+
+       
+
+        private void SweetenerMenuFlyoutItem_OnClick(object sender, RoutedEventArgs e)
+        {
+            var item = sender as MenuFlyoutItem;
+            if (item != null)
+            {
+                if (item.Text != "None" && this.IsCoffeeSelecetd)
+                {
+                    this.SelectedItems[1] = item.Text;
+                }
+            }
+
+            this.SetRestultText();
+        }
+
+        private void CreamMenuFlyoutItem_OnClick(object sender, RoutedEventArgs e)
+        {
+            var item = sender as MenuFlyoutItem;
+
+            if (item != null)
+            {
+                if (item.Text != "None" && this.IsCoffeeSelecetd)
+                {
+                    this.SelectedItems[2] = item.Text;
+                }
+            }
+
+            this.SetRestultText();
+        }
+
+        private void SetRestultText()
+        {
+            if (this.IsCoffeeSelecetd)
+            {
+                this.CoffeeResult.Text = string.Join("+", this.SelectedItems.Where(t => !string.IsNullOrEmpty(t)));
+            }
         }
     }
 }

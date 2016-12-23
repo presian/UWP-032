@@ -32,5 +32,20 @@ namespace UWP_032
         {
             Pages.Navigate(typeof(DonutPage));
         }
+
+        private void CoffeeButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            Pages.Navigate(typeof(CoffeePage));
+        }
+
+        private void ScheduleButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            Pages.Navigate(typeof(SchedulePage));
+        }
+
+        private void CompleteButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            Pages.Navigate(typeof(CompletePage));
+        }
     }
 }

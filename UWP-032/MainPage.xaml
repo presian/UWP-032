@@ -48,7 +48,9 @@
         </Button>
         <Button 
             Grid.Column="3"
-            Style="{StaticResource NavigationButton}">
+            Name="CoffeeButton"
+            Style="{StaticResource NavigationButton}"
+            Click="CoffeeButton_OnClick">
             <StackPanel 
                 Orientation="Horizontal">
                 <Image 
@@ -61,7 +63,9 @@
         </Button>
         <Button 
             Grid.Column="6"
-            Style="{StaticResource NavigationButton}">
+            Name="ScheduleButton"
+            Style="{StaticResource NavigationButton}"
+            Click="ScheduleButton_OnClick">
             <StackPanel 
                 Orientation="Horizontal">
                 <Image 
@@ -74,7 +78,9 @@
         </Button>
         <Button 
             Grid.Column="9"
-            Style="{StaticResource NavigationButton}">
+            Name="CompleteButton"
+            Style="{StaticResource NavigationButton}"
+            Click="CompleteButton_OnClick">
             <StackPanel 
                 Orientation="Horizontal">
                 <Image 
