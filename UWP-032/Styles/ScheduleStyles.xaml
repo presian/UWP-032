@@ -1,0 +1,10 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWP_032.Styles">
+    <Style 
+        TargetType="Grid"
+        x:Key="ScheduleGrid">
+        <Setter Property="Background" Value="#008000"/>
+    </Style>
+</ResourceDictionary>

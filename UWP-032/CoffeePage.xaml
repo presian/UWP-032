@@ -7,7 +7,12 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <Page.Resources>
-        <ResourceDictionary Source="Styles/CoffeeStyles.xaml" />
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/MainStyles.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Styles/CoffeeStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Page.Resources>
 
     <Grid Style="{StaticResource Grid}">
@@ -19,18 +24,20 @@
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="5*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="6*" />
         </Grid.ColumnDefinitions>
 
         <Image
             Grid.Row="0"
             Grid.Column="0"
-            Style="{StaticResource WhiteLogo}" />
+            Grid.ColumnSpan="2"
+            Style="{StaticResource DonutWhiteLogo}" />
         <RelativePanel
             Grid.Column="0"
             Grid.Row="1"
-            Grid.ColumnSpan="2">
+            Grid.ColumnSpan="3">
             <Button
                 Content="Roast"
                 Name="Roast"
@@ -77,12 +84,13 @@
         </RelativePanel>
 
         <TextBlock
-            Grid.Column="0"
+            Grid.Row="2"
             Text="Coffee: "
-            Style="{StaticResource ResultRowTextBlocks}" />
+            Style="{StaticResource Label}" />
 
         <TextBlock
             Grid.Column="1"
+            Grid.ColumnSpan="2"
             Name="CoffeeResult"
             Style="{StaticResource ResultRowTextBlocks}" />
 

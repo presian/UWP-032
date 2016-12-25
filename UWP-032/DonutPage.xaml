@@ -7,13 +7,19 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <Page.Resources>
-        <ResourceDictionary Source="Styles/DonutsStyles.xaml"/>           
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/MainStyles.xaml"/>
+                <ResourceDictionary Source="Styles/DonutsStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Page.Resources>
 
     <Grid Background="Red">
         
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="6*"/>
         </Grid.ColumnDefinitions>
         
@@ -27,19 +33,22 @@
         <Image
             Grid.Column="0"
             Grid.Row="0"
+            Grid.ColumnSpan="2"
             Style="{StaticResource DonutWhiteLogo}"/>
         <TextBlock
             Grid.Row="1"
+            Grid.ColumnSpan="2"
             Text="Original Glazed Count"
-            Style="{StaticResource SliderLabel}"/>
+            Style="{StaticResource Label}"/>
         <TextBlock
             Grid.Row="2"
+            Grid.ColumnSpan="2"
             Text="Speedway Special Count" 
-            Style="{StaticResource SliderLabel}"/>
+            Style="{StaticResource Label}"/>
 
         <Slider
             Grid.Row="1"
-            Style="{StaticResource DonutSlider}" Margin="20.333,27.333,20,20.333" VerticalAlignment="Stretch"/>
+            Style="{StaticResource DonutSlider}"/>
         <Slider
             Grid.Row="2"
             Style="{StaticResource DonutSlider}"/>

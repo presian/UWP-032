@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+﻿using System.Linq;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -51,35 +40,39 @@ namespace UWP_032
             this.SetRestultText();
         }
 
-       
-
         private void SweetenerMenuFlyoutItem_OnClick(object sender, RoutedEventArgs e)
         {
-            var item = sender as MenuFlyoutItem;
-            if (item != null)
-            {
-                if (item.Text != "None" && this.IsCoffeeSelecetd)
-                {
-                    this.SelectedItems[1] = item.Text;
-                }
-            }
+            var currentItmeIndex = 1;
+
+            SetCurrentSelectedItem(sender, currentItmeIndex);
 
             this.SetRestultText();
         }
 
         private void CreamMenuFlyoutItem_OnClick(object sender, RoutedEventArgs e)
         {
+            var currentItmeIndex = 2;
+
+            this.SetCurrentSelectedItem(sender, currentItmeIndex);
+
+            this.SetRestultText();
+        }
+
+        private void SetCurrentSelectedItem(object sender, int currentItmeIndex)
+        {
             var item = sender as MenuFlyoutItem;
 
             if (item != null)
             {
                 if (item.Text != "None" && this.IsCoffeeSelecetd)
                 {
-                    this.SelectedItems[2] = item.Text;
+                    this.SelectedItems[currentItmeIndex] = item.Text;
+                }
+                else
+                {
+                    this.SelectedItems[currentItmeIndex] = string.Empty;
                 }
             }
-
-            this.SetRestultText();
         }
 
         private void SetRestultText()

@@ -10,7 +10,8 @@
         <ResourceDictionary Source="Styles/MainStyles.xaml"/>
     </Page.Resources>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid 
+        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="100" />
             <RowDefinition Height="*"/>

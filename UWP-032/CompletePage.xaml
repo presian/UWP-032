@@ -6,8 +6,59 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/MainStyles.xaml"/>
+                <ResourceDictionary Source="Styles/CompleteStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="6*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Image 
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Style="{StaticResource DonutWhiteLogo}" 
+            Source="Assets/CurrentAssets/color-logo.png"/>
 
+        <RelativePanel
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="3">
+            <Image 
+                RelativePanel.AlignHorizontalCenterWithPanel="True"
+                RelativePanel.AlignVerticalCenterWithPanel="True"
+                Source="Assets/CurrentAssets/ticket.jpg"
+                VerticalAlignment="Center"/>
+            <StackPanel
+                RelativePanel.AlignHorizontalCenterWithPanel="True"
+                RelativePanel.AlignVerticalCenterWithPanel="True"
+                Orientation="Vertical">
+                <TextBlock 
+                    FontSize="36"
+                    Text="Order"
+                    TextAlignment="Center"/>
+                <TextBlock 
+                    FontSize="36"
+                    Text="96"
+                    TextAlignment="Center"/>
+            </StackPanel>
+           
+        </RelativePanel>
     </Grid>
 </Page>
